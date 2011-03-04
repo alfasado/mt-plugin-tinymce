@@ -1,0 +1,281 @@
+<mt:setvarblock name="editor_content" append="1">
+            <div style="position:absolute;overflow:hidden;">
+                <input id="tiny-dummy-focus" style="position:absolute;padding:1px;overflow:hidden;width:1px;height:1px;left:-1000px;" value="" />
+            </div>
+            <div id="tiny-formatted" class="editor-panel">
+                <div class="field">
+                    <div class="field-content">
+                        <div class="editor-sub" id="tiny-editor-content-enclosure" mt:min-height="66">
+                            <textarea id="tiny-editor-content-textarea" class="mt-editor-content" name="tiny-editor-content-textarea" class="full-width" style="height:355px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</mt:setvarblock>
+<mt:setvarblock name="js_include" append="1">
+<script type="text/javascript" src="<mt:var name="static_uri">plugins/TinyMCE/lib/tinymce/jquery.tinymce.js"></script>
+<script type="text/javascript">
+    //==================================================================================================================
+    //  Override Original Script
+    //==================================================================================================================
+        App.singletonConstructor =
+        MT.App = new Class( MT.App, {
+            setEditor: function(name) {
+                this.saveHTML( false );
+                this.currentEditor = name;
+                try {
+                    this.editor.setHTML( this.editorInput[ this.currentEditor ].value );
+                    tinymce_editor.change(name);
+                }catch(e){
+                    tinymce_editor.change(name);
+                }
+            },
+            setTextareaMode: function(event) {
+                this.editor.textarea.setTextMode( event.target.value );
+                tinymce_editor.check_format();
+            },
+            insertHTML: function( html, field ) {
+                 /* field is ignored now, we have one editor */
+                if(!tinymce_editor.isBoot || !tinymce_editor.isShow){
+                    this.fixHTML( this.editor.insertHTML( html ) );
+                }
+                if(field.match('extfields')){
+                    ex_tinymce_editor.insert_HTML(html, field);
+                }else{
+                    tinymce_editor.insert_HTML(html, field);
+                }
+            },
+            saveHTML: function( resetChanged ) {
+                if ( !this.editor ){
+                    return;
+                }
+                //this.fixHTML();
+                this.editorInput[ this.currentEditor ].value = this.editor.getHTML();
+                
+                if ( resetChanged ) {
+                    this.clearDirty();
+                }
+                if(tinymce_editor.isBoot && tinymce_editor.isShow){
+                    tinymce_editor.save(this.editorInput[ this.currentEditor ]);
+                }
+            }
+        } );
+    //==================================================================================================================
+    //  tinymce_editor
+    //==================================================================================================================
+        var tinymce_editor = new Object();
+    //=========================================================
+    //  tinymce_editor.init
+    //=========================================================
+        tinymce_editor.init = {
+            mode : 'exact',
+            <mt:if name="lang" eq="ja">language : 'ja',</mt:if>
+            theme : 'advanced',
+            convert_urls : false,
+            <mt:if name="editor_skin">
+            skin : 'o2k7',
+            skin_variant : 'silver',
+            </mt:if>
+            cleanup : true,
+            dialog_type : 'modal',
+            height: 355,
+            script_url : '<mt:var name="static_uri">plugins/TinyMCE/lib/tinymce/tiny_mce.js',
+            plugins : 'safari,pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,emoji',
+            theme_advanced_buttons1 : '<mt:var name="theme_advanced_buttons1">',
+            theme_advanced_buttons2 : '<mt:var name="theme_advanced_buttons2">',
+            theme_advanced_buttons3 : '<mt:var name="theme_advanced_buttons3">',
+            theme_advanced_buttons4 : '<mt:var name="theme_advanced_buttons4">',
+            theme_advanced_buttons5 : '<mt:var name="theme_advanced_buttons5">',
+            theme_advanced_toolbar_location : 'top',
+            theme_advanced_toolbar_align : 'left',
+            theme_advanced_statusbar_location : 'bottom',
+            theme_advanced_resizing : true,
+            theme_advanced_resize_horizontal : false,
+            theme_advanced_resizing_min_height : 100,
+            setup : function(ed) {
+                ed.onPostRender.add(function(ed, cm){
+                    if(ed.id == 'tiny-editor-content-textarea'){
+                        tinymce_editor.ed = ed;
+                    }
+                });
+                ed.addButton('mt-image', {
+                    title : '<__trans phrase="Insert Image">',
+                    image : '<$mt:var name="static_uri"$>plugins/TinyMCE/images/photo.png',
+                    onclick : function() {
+                        if(ed.id == 'mce_fullscreen'){
+                            var ed_fs = jQuery('#' + ed.id).tinymce();
+                            ed_fs.focus();
+                            tinymce_editor.bookmark = ed_fs.selection.getBookmark();
+                        }else{
+                            tinymce_editor.ed.focus();
+                            tinymce_editor.bookmark = tinymce_editor.ed.selection.getBookmark();
+                        }
+                        jQuery.fn.mtDialog.open('<mt:var name="script_url">?__mode=list_assets&_type=asset&edit_field=' + ed.id + '&blog_id=<mt:var name="blog_id">&dialog_view=1&filter=class&filter_val=image');
+                    }
+                });
+                ed.addButton('mt-file', {
+                    title : '<__trans phrase="Insert File">',
+                    image : '<$mt:var name="static_uri"$>plugins/TinyMCE/images/page_white_text.png',
+                    onclick : function() {
+                        if(ed.id == 'mce_fullscreen'){
+                            var ed_fs = jQuery('#' + ed.id).tinymce();
+                            ed_fs.focus();
+                            tinymce_editor.bookmark = ed_fs.selection.getBookmark();
+                        }else{
+                            tinymce_editor.ed.focus();
+                            tinymce_editor.bookmark = tinymce_editor.ed.selection.getBookmark();
+                        }
+                        jQuery.fn.mtDialog.open('<mt:var name="script_url">?__mode=list_assets&_type=asset&edit_field=' + ed.id + '&blog_id=<mt:var name="blog_id">&dialog_view=1');
+                    }
+                });
+            },
+            extended_valid_elements : 'form[action|accept|accept-charset|enctype|method|class|style|mt::asset-id]',
+            content_css : '<$mt:var name="editor_style_css"$>'
+        }
+    //=========================================================
+    //  tinymce_editor.boot
+    //=========================================================
+        tinymce_editor.boot = function(){
+            if(tinymce_editor.is_rendering){
+                getByID('tiny-editor-content-textarea').value = getByID('editor-input-content').value;
+            }else{
+                getByID('tiny-editor-content-textarea').value = getByID('editor-content-textarea').value;
+            }
+            jQuery('textarea#tiny-editor-content-textarea').tinymce(tinymce_editor.init);
+            tinymce_editor.isBoot = true;
+            tinymce_editor.isShow = true;
+            tinymce_editor.dummy_focus();
+        }
+    //=========================================================
+    //  tinymce_editor.change
+    //=========================================================
+        tinymce_editor.change = function(mode){
+            tinymce_editor.mode = mode;
+            if(!tinymce_editor.isBoot){
+                return true;
+            }
+            /*
+            if(tinymce_editor.mode == mode){
+                return true;
+            }
+            */
+            var target = 'editor-input-' + tinymce_editor.mode;
+            var newText = getByID(target).value;
+            var tect = getByID('tiny-editor-content-textarea');
+            tect.value = newText;
+            tinymce_editor.ed.load(tect);
+            tinymce_editor.dummy_focus();
+        }
+    //=========================================================
+    //  tinymce_editor.save
+    //=========================================================
+        tinymce_editor.save = function(to){
+            var editorHTML = tinymce_editor.ed.getContent();
+            //var eb = tinymce_editor.editor_body();
+            //eb.innerHTML = editorHTML;
+            to.value = editorHTML;
+        }
+    //=========================================================
+    //  tinymce_editor.editor_body
+    //=========================================================
+        tinymce_editor.editor_body = function(){
+            var editor_document = getByID('editor-content-iframe').contentWindow.document;
+            var i_body = editor_document.getElementsByTagName('body')[0];
+            return i_body;
+        }
+    //=========================================================
+    //  tinymce_editor.check_format
+    //=========================================================
+        tinymce_editor.check_format = function(){
+            tinymce_editor.format = getByID('convert_breaks').value;
+            if(tinymce_editor.format == 'richtext'){
+                tinymce_editor.hide_editor('formatted');
+                tinymce_editor.show_editor('tiny-formatted');
+                if(tinymce_editor.isBoot){
+                    var ect = getByID('editor-content-textarea');
+                    var newText = ect.value;
+                    var tect = getByID('tiny-editor-content-textarea');
+                    tect.value = newText;
+                    tinymce_editor.ed.show();
+                    tinymce_editor.ed.load(tect);
+                    tinymce_editor.dummy_focus();
+                }else{
+                    tinymce_editor.boot();
+                }
+                tinymce_editor.isShow = true;
+            }else{
+                tinymce_editor.show_editor('formatted');
+                tinymce_editor.hide_editor('tiny-formatted');
+                if(tinymce_editor.isBoot){
+                    if(tinymce_editor.isShow){
+                        getByID('editor-content-textarea').value = tinymce_editor.ed.getContent();
+                    }
+                    tinymce_editor.ed.hide();
+                }
+                tinymce_editor.isShow = false;
+            }
+            tinymce_editor.is_rendering = false;
+        }
+    //=========================================================
+    //  tinymce_editor.insert_HTML
+    //=========================================================
+        tinymce_editor.insert_HTML = function(html,field){
+            if(field == 'mce_fullscreen'){
+                var ed = jQuery('#' + field).tinymce();
+                ed.focus();
+                ed.selection.moveToBookmark(tinymce_editor.bookmark);
+                ed.execCommand('mceInsertContent',false,html);
+            }else if(tinymce_editor.isBoot && tinymce_editor.isShow){
+                tinymce_editor.ed.focus();
+                tinymce_editor.ed.selection.moveToBookmark(tinymce_editor.bookmark);
+                tinymce_editor.ed.execCommand('mceInsertContent',false,html);
+            }
+        }
+    //=========================================================
+    //  tinymce_editor.dummy_focus
+    //=========================================================
+        tinymce_editor.dummy_focus = function(){
+            getByID('tiny-dummy-focus').focus();
+        }
+    //=========================================================
+    //  tinymce_editor.hide_editor
+    //=========================================================
+        tinymce_editor.hide_editor = function(ele){
+            getByID(ele).style.left = '-9999px';
+            getByID(ele).style.width = '600px';
+            getByID(ele).style.position = 'absolute';
+        }
+    //=========================================================
+    //  tinymce_editor.show_editor
+    //=========================================================
+        tinymce_editor.show_editor = function(ele){
+            getByID(ele).style.width = 'auto';
+            getByID(ele).style.position = 'static';
+        }
+    //=========================================================
+    //  tinymce_editor.....
+    //=========================================================
+        tinymce_editor.is_rendering = false;
+        tinymce_editor.mode = 'content';
+        tinymce_editor.format = '';
+        tinymce_editor.isBoot = false;
+        tinymce_editor.isShow = false;
+    //=========================================================
+    //  Start!
+    //=========================================================
+        jQuery().ready(function(){
+            tinymce_editor.is_rendering = true;
+            tinymce_editor.check_format();
+        });
+</script>
+</mt:setvarblock>
+<mt:setvarblock name="html_head" append="1">
+<style type="text/css">
+#tiny-formatted .field {
+    margin-top: 0px;
+}
+.mceLayout {
+    width: 100% !important;
+}
+</style>
+</mt:setvarblock>

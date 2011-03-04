@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>絵文字の挿入</title>
+		<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+		<script type="text/javascript" src="js/emoji.js"></script>
+		<style>
+			img {
+				border: none;
+			}
+		</style>
+	</head>
+	<body style="display: none">
+		<div align="center">
+			<div class="title">絵文字の挿入:<br /><br /></div>
+			<table border="0" cellspacing="0" cellpadding="6">
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('sun.gif',this);return false;"><img src="img/sun.gif" width="12" height="12" alt="晴れ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('cloud.gif',this);return false;"><img src="img/cloud.gif" width="12" height="12" alt="曇り"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('rain.gif',this);return false;"><img src="img/rain.gif" width="12" height="12" alt="雨"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('snow.gif',this);return false;"><img src="img/snow.gif" width="12" height="12" alt="雪"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('thunder.gif',this);return false;"><img src="img/thunder.gif" width="12" height="12" alt="雷"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('typhoon.gif',this);return false;"><img src="img/typhoon.gif" width="12" height="12" alt="台風"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('mist.gif',this);return false;"><img src="img/mist.gif" width="12" height="12" alt="霧"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sprinkle.gif',this);return false;"><img src="img/sprinkle.gif" width="12" height="12" alt="小雨"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('aries.gif',this);return false;"><img src="img/aries.gif" width="12" height="12" alt="牡羊座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('taurus.gif',this);return false;"><img src="img/taurus.gif" width="12" height="12" alt="牡牛座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('gemini.gif',this);return false;"><img src="img/gemini.gif" width="12" height="12" alt="双子座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('cancer.gif',this);return false;"><img src="img/cancer.gif" width="12" height="12" alt="蟹座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('leo.gif',this);return false;"><img src="img/leo.gif" width="12" height="12" alt="獅子座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('virgo.gif',this);return false;"><img src="img/virgo.gif" width="12" height="12" alt="乙女座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('libra.gif',this);return false;"><img src="img/libra.gif" width="12" height="12" alt="天秤座"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('scorpius.gif',this);return false;"><img src="img/scorpius.gif" width="12" height="12" alt="蠍座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sagittarius.gif',this);return false;"><img src="img/sagittarius.gif" width="12" height="12" alt="射手座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('capricornus.gif',this);return false;"><img src="img/capricornus.gif" width="12" height="12" alt="山羊座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('aquarius.gif',this);return false;"><img src="img/aquarius.gif" width="12" height="12" alt="水瓶座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('pisces.gif',this);return false;"><img src="img/pisces.gif" width="12" height="12" alt="魚座"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sports.gif',this);return false;"><img src="img/sports.gif" width="12" height="12" alt="スポーツ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('baseball.gif',this);return false;"><img src="img/baseball.gif" width="12" height="12" alt="野球"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('golf.gif',this);return false;"><img src="img/golf.gif" width="12" height="12" alt="ゴルフ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('tennis.gif',this);return false;"><img src="img/tennis.gif" width="12" height="12" alt="テニス"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('soccer.gif',this);return false;"><img src="img/soccer.gif" width="12" height="12" alt="サッカー"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('ski.gif',this);return false;"><img src="img/ski.gif" width="12" height="12" alt="スキー"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('basketball.gif',this);return false;"><img src="img/basketball.gif" width="12" height="12" alt="バスケットボール"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('motorsports.gif',this);return false;"><img src="img/motorsports.gif" width="12" height="12" alt="モータースポーツ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('pocketbell.gif',this);return false;"><img src="img/pocketbell.gif" width="12" height="12" alt="ポケットベル"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('train.gif',this);return false;"><img src="img/train.gif" width="12" height="12" alt="電車"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('subway.gif',this);return false;"><img src="img/subway.gif" width="12" height="12" alt="地下鉄"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('bullettrain.gif',this);return false;"><img src="img/bullettrain.gif" width="12" height="12" alt="新幹線"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('car.gif',this);return false;"><img src="img/car.gif" width="12" height="12" alt="車(セダン)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('rvcar.gif',this);return false;"><img src="img/rvcar.gif" width="12" height="12" alt="車(RV)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('bus.gif',this);return false;"><img src="img/bus.gif" width="12" height="12" alt="バス"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('ship.gif',this);return false;"><img src="img/ship.gif" width="12" height="12" alt="船"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('airplane.gif',this);return false;"><img src="img/airplane.gif" width="12" height="12" alt="飛行機"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('house.gif',this);return false;"><img src="img/house.gif" width="12" height="12" alt="家"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('building.gif',this);return false;"><img src="img/building.gif" width="12" height="12" alt="ビル"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('postoffice.gif',this);return false;"><img src="img/postoffice.gif" width="12" height="12" alt="郵便局"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('hospital.gif',this);return false;"><img src="img/hospital.gif" width="12" height="12" alt="病院"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('bank.gif',this);return false;"><img src="img/bank.gif" width="12" height="12" alt="銀行"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('atm.gif',this);return false;"><img src="img/atm.gif" width="12" height="12" alt="ATM"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('hotel.gif',this);return false;"><img src="img/hotel.gif" width="12" height="12" alt="ホテル"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('24hours.gif',this);return false;"><img src="img/24hours.gif" width="12" height="12" alt="コンビニ"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('gasstation.gif',this);return false;"><img src="img/gasstation.gif" width="12" height="12" alt="ガソリンスタンド"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('parking.gif',this);return false;"><img src="img/parking.gif" width="12" height="12" alt="駐車場"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('signaler.gif',this);return false;"><img src="img/signaler.gif" width="12" height="12" alt="信号"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('toilet.gif',this);return false;"><img src="img/toilet.gif" width="12" height="12" alt="トイレ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('restaurant.gif',this);return false;"><img src="img/restaurant.gif" width="12" height="12" alt="レストラン"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('cafe.gif',this);return false;"><img src="img/cafe.gif" width="12" height="12" alt="喫茶店"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('bar.gif',this);return false;"><img src="img/bar.gif" width="12" height="12" alt="バー"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('beer.gif',this);return false;"><img src="img/beer.gif" width="12" height="12" alt="ビール"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('fastfood.gif',this);return false;"><img src="img/fastfood.gif" width="12" height="12" alt="ファーストフード"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('boutique.gif',this);return false;"><img src="img/boutique.gif" width="12" height="12" alt="ブティック"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('parlor.gif',this);return false;"><img src="img/parlor.gif" width="12" height="12" alt="美容院"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('karaoke.gif',this);return false;"><img src="img/karaoke.gif" width="12" height="12" alt="カラオケ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('movie.gif',this);return false;"><img src="img/movie.gif" width="12" height="12" alt="映画"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('upwardright.gif',this);return false;"><img src="img/upwardright.gif" width="12" height="12" alt="右斜め上"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('amusement.gif',this);return false;"><img src="img/amusement.gif" width="12" height="12" alt="遊園地"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('music.gif',this);return false;"><img src="img/music.gif" width="12" height="12" alt="音楽"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('art.gif',this);return false;"><img src="img/art.gif" width="12" height="12" alt="アート"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('actor.gif',this);return false;"><img src="img/actor.gif" width="12" height="12" alt="演劇"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('event.gif',this);return false;"><img src="img/event.gif" width="12" height="12" alt="イベント"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('ticket.gif',this);return false;"><img src="img/ticket.gif" width="12" height="12" alt="チケット"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('smoking.gif',this);return false;"><img src="img/smoking.gif" width="12" height="12" alt="喫煙"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('nosmoking.gif',this);return false;"><img src="img/nosmoking.gif" width="12" height="12" alt="禁煙"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('camera.gif',this);return false;"><img src="img/camera.gif" width="12" height="12" alt="カメラ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('bag.gif',this);return false;"><img src="img/bag.gif" width="12" height="12" alt="カバン"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('book.gif',this);return false;"><img src="img/book.gif" width="12" height="12" alt="本"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('ribbon.gif',this);return false;"><img src="img/ribbon.gif" width="12" height="12" alt="リボン"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('present.gif',this);return false;"><img src="img/present.gif" width="12" height="12" alt="プレゼント"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('birthday.gif',this);return false;"><img src="img/birthday.gif" width="12" height="12" alt="バースデー"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('telephone.gif',this);return false;"><img src="img/telephone.gif" width="12" height="12" alt="電話"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('mobilephone.gif',this);return false;"><img src="img/mobilephone.gif" width="12" height="12" alt="携帯電話"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('memo.gif',this);return false;"><img src="img/memo.gif" width="12" height="12" alt="メモ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('tv.gif',this);return false;"><img src="img/tv.gif" width="12" height="12" alt="TV"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('game.gif',this);return false;"><img src="img/game.gif" width="12" height="12" alt="ゲーム"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('cd.gif',this);return false;"><img src="img/cd.gif" width="12" height="12" alt="CD"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('heart.gif',this);return false;"><img src="img/heart.gif" width="12" height="12" alt="ハート"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('spade.gif',this);return false;"><img src="img/spade.gif" width="12" height="12" alt="スペード"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('diamond.gif',this);return false;"><img src="img/diamond.gif" width="12" height="12" alt="ダイヤ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('club.gif',this);return false;"><img src="img/club.gif" width="12" height="12" alt="クラブ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('eye.gif',this);return false;"><img src="img/eye.gif" width="12" height="12" alt="目"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('ear.gif',this);return false;"><img src="img/ear.gif" width="12" height="12" alt="耳"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('rock.gif',this);return false;"><img src="img/rock.gif" width="12" height="12" alt="手(グー)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('scissors.gif',this);return false;"><img src="img/scissors.gif" width="12" height="12" alt="手(チョキ)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('paper.gif',this);return false;"><img src="img/paper.gif" width="12" height="12" alt="手(パー)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('downwardright.gif',this);return false;"><img src="img/downwardright.gif" width="12" height="12" alt="右斜め下"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('upwardleft.gif',this);return false;"><img src="img/upwardleft.gif" width="12" height="12" alt="左斜め上"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('foot.gif',this);return false;"><img src="img/foot.gif" width="12" height="12" alt="足"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('shoe.gif',this);return false;"><img src="img/shoe.gif" width="12" height="12" alt="くつ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('glasses.gif',this);return false;"><img src="img/glasses.gif" width="12" height="12" alt="眼鏡"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('wheelchair.gif',this);return false;"><img src="img/wheelchair.gif" width="12" height="12" alt="車椅子"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('newmoon.gif',this);return false;"><img src="img/newmoon.gif" width="12" height="12" alt="新月"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('moon1.gif',this);return false;"><img src="img/moon1.gif" width="12" height="12" alt="やや欠け月"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('moon2.gif',this);return false;"><img src="img/moon2.gif" width="12" height="12" alt="半月"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('moon3.gif',this);return false;"><img src="img/moon3.gif" width="12" height="12" alt="三日月"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('fullmoon.gif',this);return false;"><img src="img/fullmoon.gif" width="12" height="12" alt="満月"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('dog.gif',this);return false;"><img src="img/dog.gif" width="12" height="12" alt="犬"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('cat.gif',this);return false;"><img src="img/cat.gif" width="12" height="12" alt="猫"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('resort.gif',this);return false;"><img src="img/resort.gif" width="12" height="12" alt="リゾート"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('xmas.gif',this);return false;"><img src="img/xmas.gif" width="12" height="12" alt="クリスマス"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('downwardleft.gif',this);return false;"><img src="img/downwardleft.gif" width="12" height="12" alt="左斜め下"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('phoneto.gif',this);return false;"><img src="img/phoneto.gif" width="12" height="12" alt="phone to"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('mailto.gif',this);return false;"><img src="img/mailto.gif" width="12" height="12" alt="mail to"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('faxto.gif',this);return false;"><img src="img/faxto.gif" width="12" height="12" alt="fax to"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('info01.gif',this);return false;"><img src="img/info01.gif" width="12" height="12" alt="iモード"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('info02.gif',this);return false;"><img src="img/info02.gif" width="12" height="12" alt="iモード(枠付き)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('mail.gif',this);return false;"><img src="img/mail.gif" width="12" height="12" alt="メール"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('docomo.gif',this);return false;"><img src="img/docomo.gif" width="12" height="12" alt="ドコモ提供"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('docomopoint.gif',this);return false;"><img src="img/docomopoint.gif" width="12" height="12" alt="ドコモポイント"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('yen.gif',this);return false;"><img src="img/yen.gif" width="12" height="12" alt="有料"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('free.gif',this);return false;"><img src="img/free.gif" width="12" height="12" alt="無料"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('id.gif',this);return false;"><img src="img/id.gif" width="12" height="12" alt="ID"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('key.gif',this);return false;"><img src="img/key.gif" width="12" height="12" alt="パスワード"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('enter.gif',this);return false;"><img src="img/enter.gif" width="12" height="12" alt="次項有"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('clear.gif',this);return false;"><img src="img/clear.gif" width="12" height="12" alt="クリア"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('search.gif',this);return false;"><img src="img/search.gif" width="12" height="12" alt="サーチ(調べる)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('new.gif',this);return false;"><img src="img/new.gif" width="12" height="12" alt="NEW"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('flag.gif',this);return false;"><img src="img/flag.gif" width="12" height="12" alt="位置情報"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('freedial.gif',this);return false;"><img src="img/freedial.gif" width="12" height="12" alt="フリーダイヤル"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sharp.gif',this);return false;"><img src="img/sharp.gif" width="12" height="12" alt="シャープダイヤル"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('mobaq.gif',this);return false;"><img src="img/mobaq.gif" width="12" height="12" alt="モバQ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('one.gif',this);return false;"><img src="img/one.gif" width="12" height="12" alt="1"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('two.gif',this);return false;"><img src="img/two.gif" width="12" height="12" alt="2"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('three.gif',this);return false;"><img src="img/three.gif" width="12" height="12" alt="3"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('four.gif',this);return false;"><img src="img/four.gif" width="12" height="12" alt="4"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('five.gif',this);return false;"><img src="img/five.gif" width="12" height="12" alt="5"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('six.gif',this);return false;"><img src="img/six.gif" width="12" height="12" alt="6"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('seven.gif',this);return false;"><img src="img/seven.gif" width="12" height="12" alt="7"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('eight.gif',this);return false;"><img src="img/eight.gif" width="12" height="12" alt="8"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('nine.gif',this);return false;"><img src="img/nine.gif" width="12" height="12" alt="9"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('zero.gif',this);return false;"><img src="img/zero.gif" width="12" height="12" alt="0"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('ok.gif',this);return false;"><img src="img/ok.gif" width="12" height="12" alt="決定"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('heart01.gif',this);return false;"><img src="img/heart01.gif" width="12" height="12" alt="黒ハート"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('heart02.gif',this);return false;"><img src="img/heart02.gif" width="12" height="12" alt="揺れるハート"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('heartbreak.gif',this);return false;"><img src="img/heartbreak.gif" width="12" height="12" alt="失恋"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('heart04.gif',this);return false;"><img src="img/heart04.gif" width="12" height="12" alt="ハートたち(複数ハート)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('happy01.gif',this);return false;"><img src="img/happy01.gif" width="12" height="12" alt="わーい(嬉しい顔)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('angry.gif',this);return false;"><img src="img/angry.gif" width="12" height="12" alt="ちっ(怒った顔)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('despair.gif',this);return false;"><img src="img/despair.gif" width="12" height="12" alt="がく〜(落胆した顔)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sad.gif',this);return false;"><img src="img/sad.gif" width="12" height="12" alt="もうやだ〜(悲しい顔)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('unintentionally.gif',this);return false;"><img src="img/unintentionally.gif" width="12" height="12" alt="ふらふら"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('up.gif',this);return false;"><img src="img/up.gif" width="12" height="12" alt="グッド(上向き矢印)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('note.gif',this);return false;"><img src="img/note.gif" width="12" height="12" alt="るんるん"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('spa.gif',this);return false;"><img src="img/spa.gif" width="12" height="12" alt="いい気分(温泉)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('lovely.gif',this);return false;"><img src="img/lovely.gif" width="12" height="12" alt="かわいい"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('kissmark.gif',this);return false;"><img src="img/kissmark.gif" width="12" height="12" alt="キスマーク"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('shine.gif',this);return false;"><img src="img/shine.gif" width="12" height="12" alt="ぴかぴか(新しい)"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('flair.gif',this);return false;"><img src="img/flair.gif" width="12" height="12" alt="ひらめき"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('annoy.gif',this);return false;"><img src="img/annoy.gif" width="12" height="12" alt="むかっ(怒り)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('punch.gif',this);return false;"><img src="img/punch.gif" width="12" height="12" alt="パンチ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('bomb.gif',this);return false;"><img src="img/bomb.gif" width="12" height="12" alt="爆弾"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('notes.gif',this);return false;"><img src="img/notes.gif" width="12" height="12" alt="ムード"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('down.gif',this);return false;"><img src="img/down.gif" width="12" height="12" alt="バッド(下向き矢印)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sleepy.gif',this);return false;"><img src="img/sleepy.gif" width="12" height="12" alt="眠い(睡眠)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sign01.gif',this);return false;"><img src="img/sign01.gif" width="12" height="12" alt="exclamation"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sign02.gif',this);return false;"><img src="img/sign02.gif" width="12" height="12" alt="exclamation&question"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sign03.gif',this);return false;"><img src="img/sign03.gif" width="12" height="12" alt="exclamation×2"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('impact.gif',this);return false;"><img src="img/impact.gif" width="12" height="12" alt="どんっ(衝撃)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sweat01.gif',this);return false;"><img src="img/sweat01.gif" width="12" height="12" alt="あせあせ(飛び散る汗)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sweat02.gif',this);return false;"><img src="img/sweat02.gif" width="12" height="12" alt="たらーっ(汗)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('dash.gif',this);return false;"><img src="img/dash.gif" width="12" height="12" alt="ダッシュ(走り出すさま)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('sign04.gif',this);return false;"><img src="img/sign04.gif" width="12" height="12" alt="ー(長音記号１)"/></a></td>
+				</tr>
+				<tr>
+					<td><a href="#" onclick="EmojiDialog.insert('sign05.gif',this);return false;"><img src="img/sign05.gif" width="12" height="12" alt="ー(長音記号２)"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('slate.gif',this);return false;"><img src="img/slate.gif" width="12" height="12" alt="カチンコ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('pouch.gif',this);return false;"><img src="img/pouch.gif" width="12" height="12" alt="ふくろ"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('pen.gif',this);return false;"><img src="img/pen.gif" width="12" height="12" alt="ペン"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('shadow.gif',this);return false;"><img src="img/shadow.gif" width="12" height="12" alt="人影"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('chair.gif',this);return false;"><img src="img/chair.gif" width="12" height="12" alt="いす"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('night.gif',this);return false;"><img src="img/night.gif" width="12" height="12" alt="夜"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('soon.gif',this);return false;"><img src="img/soon.gif" width="12" height="12" alt="soon"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('on.gif',this);return false;"><img src="img/on.gif" width="12" height="12" alt="on"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('end.gif',this);return false;"><img src="img/end.gif" width="12" height="12" alt="end"/></a></td>
+					<td><a href="#" onclick="EmojiDialog.insert('clock.gif',this);return false;"><img src="img/clock.gif" width="12" height="12" alt="時計"/></a></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
